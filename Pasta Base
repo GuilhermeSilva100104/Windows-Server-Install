@@ -1,0 +1,169 @@
+#Autor: Guilherme Morgado Silva
+#Data de criação: 05/06/2022
+#Data de atualização: 05/06/2022
+#Versão: 0.01
+******************************************************************************************
+Na unidade F:\, crie o diretório VILA
+Dentro do diretório VILA, crie os diretórios abaixo:
+Administrativo
+Atendentes
+Compras
+Estoque
+Financeiro
+Gerentes
+Pedidos
+Promocao
+PublicaVila
+RH
+Vendas
+******************************************************************************************
+Abra o AD
+Crie os grupos abaixo na OU: braga.intra/BRAGA/GROUPS
+G-VILA-ADMINISTRATIVO
+G-VILA-ATENDENTES
+G-VILA-COMPRAS
+G-VILA-GERENTES
+G-VILA-VENDAS
+******************************************************************************************
+Adicione os usuários abaixo ao grupo G-VILA-VENDAS
+Senhor Barriga
+Chaves Bolanos
+Chiquinha Madruga
+Dona Clotilde
+Dona Florinda
+******************************************************************************************
+Adicione os usuários abaixo ao grupo G-VILA-ATENDENTES
+Jaiminho Carteiro
+Kiko Vilagran
+******************************************************************************************
+Adicione os usuários abaixo ao grupo G-VILA-COMPRAS
+Professor Girafales
+Godines Bolanos
+******************************************************************************************
+Adicione os usuários abaixo ao grupo G-VILA-GERENTES
+Senhor Madruga
+******************************************************************************************
+Adicione os usuários abaixo ao grupo G-VILA-ADMINISTRATIVO
+Nhonho Barriga
+Pops Mesa
+******************************************************************************************
+Atribuindo Permissões de Compartilhamento para todas as pastas
+Dar permissão de Alteração ao grupo Usuários do domínio
+******************************************************************************************
+Atribuindo Permissões de Segurança
+Pasta: Administrativo
+Grupo: G-VILA-ADMINISTRATIVO
+Permissão: Modificar
+
+Pasta: Atendentes
+Grupo: G-VILA-ATENDENTES
+Permissão: Modificar
+
+Pasta: Compras
+Grupo: G-VILA-COMPRAS
+Permissão: Modificar
+
+Pasta: Gerentes
+Grupo: G-VILA-GERENTES
+Permissão: Modificar
+
+Pasta: Vendas
+Grupo: G-VILA-VENDAS
+Permissão: Modificar
+
+Pasta: Estoque
+Grupo: G-VILA-COMPRAS, G-VILA-VENDAS, G-VILA-GERENTES, G-VILA-ATENDENTES
+Permissão: Modificar, Modificar, Modificar, Leitura e Execução
+
+Pasta: Promocao
+Grupo: G-VILA-VENDAS, G-VILA-GERENTES
+Permissão: Leitura e Execução, Modificar
+
+Pasta: Financeiro
+Grupo: G-VILA-ADMINISTRATIVO, G-VILA-GERENTES
+Permissão: Modificar, Modificar
+
+Pasta: Pedidos
+Grupo: G-VILA-COMPRAS, G-VILA-VENDAS, G-VILA-GERENTES, G-VILA-ADMINISTRATIVO
+Permissão: Modificar, Leitura e Execução, Modificar, Leitura e Execução
+
+Pasta: RH
+Grupo: G-VILA-GERENTES, G-VILA-ADMINISTRATIVO
+Permissão: Modificar, Modificar
+
+Pasta: PublicaVila
+Grupo: Usuários do domínio
+Permissão: Modificar
+******************************************************************************************
+Criando os scripts de logon
+Local para salvar: C:\Windows\SYSVOL\sysvol\braga.intra\scripts
+
+administrativo.bat
+net use O: \\SRVF???\Administrativo
+net use P: \\SRV???\Financeiro2
+net use Q: \\SRV???\Pedidos
+net use R: \\SRV???\RH2
+net use S: \\SRV???\PublicaVila
+
+atendentes.bat
+net use O: \\SRV???\Atendentes
+net use P: \\SRV???\Estoque
+net use Q: \\SRV???\PublicaVila
+
+compras.bat
+net use O: \\SRV???\Compras
+net use P: \\SRV???\Estoque
+net use Q: \\SRV???\Pedidos
+net use R: \\SRV???\PublicaVila
+
+gerentes.bat
+net use O: \\SRV???\Gerentes
+net use P: \\SRV???\Estoque
+net use Q: \\SRV???\Promocao
+net use R: \\SRV???\Financeiro2
+net use S: \\SRV???\Pedidos
+net use T: \\SRV???\RH
+net use U: \\SRV???\PublicaVila
+
+vendas.bat
+net use O: \\SRV???\Vendas2
+net use P: \\SRV???\Estoque
+net use Q: \\SRV???\Promocao
+net use R: \\SRV???\Pedidos
+net use S: \\SRV???\PublicaVila
+******************************************************************************************
+No AD, associar os devidos scripts aos devidos usuários
+******************************************************************************************
+Criando Pasta Base
+Na unidade F:\, crie o diretório HOME
+******************************************************************************************
+Atribuindo Permissões de Compartilhamento na pasta
+Nome do Compartilhamento: HOME$
+Dar permissão de Alteração ao grupo Usuários do domínio
+******************************************************************************************
+Atribuindo Permissões de Segurança
+Clique com o botão direito do mouse no diretório Home e clique em Propriedades
+Clique na aba Segurança
+Clique em Avançado
+Na aba Permissão, clique em ADD
+Selecione usuários do domínio
+Em aplicar em: Somente esta pasta
+Permissões básicas: Modificar
+OK
+******************************************************************************************
+No AD, vá até a OU ???.intra/BRAGA/USERS/VILA e selecione todos os usuários
+Clique com o botão direito e selecione Propriedades
+Clique na aba perfil
+Clique em Pasta Base
+Selecione Conectar, escolha a unidade Z:
+Digite \\???\home$\%username%
+Clique em OK
+******************************************************************************************
+Habilitar Enumeração
+Abra o Gerenciador do Servidor
+Clique em Serviços de Armazenamento e Arquivos
+Clique em Compartilhamentos
+Selecione o compartilhamento HOME$ e clique com o botão direito do mouse em Propriedades
+Clique em Configurações
+Selecione a opção Habilitar enumeração baseada em acesso
+******************************************************************************************
