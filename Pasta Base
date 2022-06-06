@@ -99,38 +99,38 @@ Criando os scripts de logon
 Local para salvar: C:\Windows\SYSVOL\sysvol\braga.intra\scripts
 
 administrativo.bat
-net use O: \\SRVF???\Administrativo
-net use P: \\SRV???\Financeiro2
-net use Q: \\SRV???\Pedidos
-net use R: \\SRV???\RH2
-net use S: \\SRV???\PublicaVila
+net use O: \\SRVSEU_SERVIDOR\Administrativo
+net use P: \\SRVSEU_SERVIDOR\Financeiro2
+net use Q: \\SRVSEU_SERVIDOR\Pedidos
+net use R: \\SRVSEU_SERVIDOR\RH2
+net use S: \\SRVSEU_SERVIDOR\PublicaVila
 
 atendentes.bat
-net use O: \\SRV???\Atendentes
-net use P: \\SRV???\Estoque
-net use Q: \\SRV???\PublicaVila
+net use O: \\SRVSEU_SERVIDOR\Atendentes
+net use P: \\SRVSEU_SERVIDOR\Estoque
+net use Q: \\SRVSEU_SERVIDOR\PublicaVila
 
 compras.bat
-net use O: \\SRV???\Compras
-net use P: \\SRV???\Estoque
-net use Q: \\SRV???\Pedidos
-net use R: \\SRV???\PublicaVila
+net use O: \\SRVSEU_SERVIDOR\Compras
+net use P: \\SRVSEU_SERVIDOR\Estoque
+net use Q: \\SRVSEU_SERVIDOR\Pedidos
+net use R: \\SRVSEU_SERVIDOR\PublicaVila
 
 gerentes.bat
-net use O: \\SRV???\Gerentes
-net use P: \\SRV???\Estoque
-net use Q: \\SRV???\Promocao
-net use R: \\SRV???\Financeiro2
-net use S: \\SRV???\Pedidos
-net use T: \\SRV???\RH
-net use U: \\SRV???\PublicaVila
+net use O: \\SRVSEU_SERVIDOR???\Gerentes
+net use P: \\SRVSEU_SERVIDOR\Estoque
+net use Q: \\SRVSEU_SERVIDOR\Promocao
+net use R: \\SRVSEU_SERVIDOR\Financeiro2
+net use S: \\SRVSEU_SERVIDOR\Pedidos
+net use T: \\SRVSEU_SERVIDOR\RH
+net use U: \\SRVSEU_SERVIDOR\PublicaVila
 
 vendas.bat
-net use O: \\SRV???\Vendas2
-net use P: \\SRV???\Estoque
-net use Q: \\SRV???\Promocao
-net use R: \\SRV???\Pedidos
-net use S: \\SRV???\PublicaVila
+net use O: \\SRVSEU_SERVIDOR\Vendas2
+net use P: \\SRVSEU_SERVIDOR\Estoque
+net use Q: \\SRVSEU_SERVIDOR\Promocao
+net use R: \\SRVSEU_SERVIDOR\Pedidos
+net use S: \\SRVSEU_SERVIDOR\PublicaVila
 ******************************************************************************************
 No AD, associar os devidos scripts aos devidos usuários
 ******************************************************************************************
@@ -156,7 +156,7 @@ Clique com o botão direito e selecione Propriedades
 Clique na aba perfil
 Clique em Pasta Base
 Selecione Conectar, escolha a unidade Z:
-Digite \\???\home$\%username%
+Digite \\SEU_SERVIDOR\home$\%username%
 Clique em OK
 ******************************************************************************************
 Habilitar Enumeração
