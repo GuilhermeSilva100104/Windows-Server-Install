@@ -27,10 +27,10 @@ Abrir o navegador na estação de trabalho e digitar http://172.16.10.10
 Criação de CNAME no DNS
 Abrir o Server Manager
 Clicar em Tools e selecionar DNS
-Clicar em SRVFAGNER, Forward Lookup Zones, braga.intra
+Clicar em SRVSEU_SERVIDOR, Forward Lookup Zones, braga.intra
 Clicar com o botão direito do mouse e selecionar New Alias (CNAME)
 Alias name: fagner
-FQDN: srvfagner.braga.intra
+FQDN: SEU_SERVIDOR.SEU_DOMINIO.intra
 ******************************************************************************************
 Criação de Nova Zona Primária DNS
 Abrir o Server Manager
@@ -41,12 +41,12 @@ Next
 Primary Zone
 Next
 To all DNS server running on domain controllers in this domain: braga.intra
-Zone name: ??.intra
+Zone name: SEU_DOMINIO.intra
 Next
 Allow only secure dynamic updates
 Next
 Finish
-Entrar na zona ???.intra
+Entrar na zona SEU_DOMINIO.intra
 Clicar com o botão direito do mouse e selecionar New Host (A or AAAA)
 Name: www
 IP address: 172.16.10.10
@@ -57,7 +57,7 @@ Done
 Criação de Nova Zona Primária DNS
 Abrir o Server Manager
 Clicar em Tools e selecionar DNS
-Clicar em SRV???, Forward Lookup Zones
+Clicar em SRVSEU_SERVIDOR Forward Lookup Zones
 Clicar com o botão direito do mouse e selecionar New Zone
 Next
 Primary Zone
@@ -68,7 +68,7 @@ Next
 Allow only secure dynamic updates
 Next
 Finish
-Entrar na zona ???.intra
+Entrar na zona SEU_DOMINIO.intra
 Clicar com o botão direito do mouse e selecionar New Host (A or AAAA)
 Name: www
 IP address: 172.16.10.10
@@ -78,7 +78,7 @@ Done
 ******************************************************************************************
 Abrir o Server Manager
 Clicar em Tools e selecionar Internet Information Services
-Clicar em SRV???
+Clicar em SRVSEU_SERVIDOR
 Clicar com o direito em Sites e depois em Add Website...
 Site name: senac
 Physical path: C:\senac
