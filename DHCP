@@ -4,7 +4,7 @@
 #Versão: 0.01
 ******************************************************************************************
 Instalação do DHCP
-SRV???
+SRVSEU_SERVIDOR
 ******************************************************************************************
 Em Gerenciador do Servidor, clique em Gerenciar e depois em Adicionar Funções e Recursos
 Clique em Próximo
@@ -26,7 +26,7 @@ Configurando o DHCP
 Em Ferramentas Administrativas, abra o DHCP
 Clique com o botão direito em IPv4 e selecione a opção Novo escopo
 Clique em avançar
-Nome: BRAGA.INTRA
+Nome: SEU_DOMINIO.INTRA
 Descrição: DHCP para estações de trabalho conectadas na rede corporativa BRAGA.INTRA
 Clique em avançar
 Endereço IP Inicial: 172.16.10.100
@@ -44,7 +44,7 @@ Clique em avançar
 Roteador: 172.16.10.254
 Clique em Adicionar
 Clique em avançar
-Domínio Pai: BRAGA.INTRA
+Domínio Pai: SEU_DOMINIO.INTRA
 Clique em avançar
 Clique em avançar
 Selecione a opção "Sim, desejo ativar este escopo agora"
