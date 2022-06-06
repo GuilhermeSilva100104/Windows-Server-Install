@@ -11,13 +11,13 @@ DNS: 172.16.10.10
 ***
 Adicionar Função de Serviço de Domínio do Active Directory  
 Promover este servidor a um controlador de domínio  
-Adicionar uma nova floresta: BRAGA.INTRA  
+Adicionar uma nova floresta: SEU_DOMINIO.INTRA  
 Nível Funcional da Floresta: Windows Server 2016  
 Nível Funcional do Domínio:  Windows Server 2016  
 Servidor DNS  
 Catálogo Global  
 Senha Modo de Restauração dos Serviços de Diretório: 123@senac  
-Nome NetBIOS: BRAGA  
+Nome NetBIOS: NOME_DO_SEU_DOMINIO  
 ***
 Configurando o ADDS  
 ncpa.cpl  
