@@ -20,37 +20,37 @@ Permitir apenas atualizações dinâmicas seguras
 ***
 Zona de Pesquisa Direta  
 BRAGA.INTRA 
-    SRV???  
+    SRVSEU_SERVIDOR  
         Atualizar o registro de ponteiro   associado (PTR)  
 ******************************************************************************************
 Criando registros DNS
 Tipo: A
-Nome: fw???
+Nome: fwSEU_FIREWALL
 Dado: 172.16.10.254
 
 Tipo: A
-Nome: ws???
+Nome: wsSEU_WEBSERVER
 Dado: 172.16.10.20
 
 Tipo: CNAME
 Nome: ftp
-Dado: ws???.???.intra.
+Dado: wsSEU_WEBSERVER.SEU_DOMINIO.intra.
 
 Tipo: CNAME
 Nome: fw
-Dado: fw???.???.intra.
+Dado: fwSEU_FIREWALL.SEU_DOMINIO.intra.
 
 Tipo: CNAME
 Nome: ssh
-Dado: ws???.???.intra.
+Dado: wsSEU_WEBSERVER.SEU_DOMINIO.intra.
 
 Tipo: CNAME
 Nome: wp
-Dado: wsfagner.braga.intra.
+Dado: wsSEU_WEBSERVER.SEU_DOMINIO.intra.
 
 Tipo: CNAME
 Nome: www
-Dado: wsfagner.braga.intra.
+Dado: wsSEU_WEBSERVER.SEU_DOMINIO.intra.
 ******************************************************************************************
 DHCP
 Opções de Escopo
@@ -62,7 +62,7 @@ Byte: 0x8
 ******************************************************************************************
 No PowerShell no Windows Server
 nslookup www
-nslookup ???.intra
+nslookup SEU_DOMINIO.intra
 nslookup ftp
 nslookup ssh
 nslookup google.com
@@ -71,8 +71,8 @@ No Linux Mint
 Abrir o navegador e digitar http://www.braga.intra
 Deverá abrir a página do Apache
 
-Acessar o ws??? pelo ssh
-ssh senac@ssh.???.intra
+Acessar o wsSEU_WEBSERVER pelo ssh
+ssh senac@ssh.SEU_DOMINIO.intra
 ******************************************************************************************
 No wsfagner
 Alterando o endereço do DNS no servidor wsfagner
@@ -86,11 +86,11 @@ Comentar a linha 39 e descomentar a linha 38
 ******************************************************************************************
 No wsfagner
 sudo netplan --debug apply
-Verificar se o DNS aponta para o srvfagner (172.16.10.10)
+Verificar se o DNS aponta para o srvSEU_SERVIDOR(172.16.10.10)
 ******************************************************************************************
 No ws???
 sudo systemd-resolve --status
-Verificar se o DNS aponta para o srvfagner (172.16.10.10)
+Verificar se o DNS aponta para o srvSEU_SERVIDOR (172.16.10.10)
 ******************************************************************************************
 No wsfagner
 Testar a conexão local do MySQL
