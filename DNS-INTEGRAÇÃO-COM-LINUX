@@ -13,13 +13,13 @@ Criar Zona DNS Inversa
 Zona de Pesquisa Inversa  
     Zona primária  
     Armazenar a zona no AD  
-Para todos os servidores DNS sendo executados em controladores de domínio neste domínio: BRAGA.INTRA  
+Para todos os servidores DNS sendo executados em controladores de domínio neste domínio: "SEU_DOMINIO"
 Zona de Pesquisa Inversa IPv4  
 172.16.10
 Permitir apenas atualizações dinâmicas seguras  
 ***
 Zona de Pesquisa Direta  
-BRAGA.INTRA 
+"SEU_DOMINIO"
     SRVSEU_SERVIDOR  
         Atualizar o registro de ponteiro   associado (PTR)  
 ******************************************************************************************
@@ -74,7 +74,7 @@ Deverá abrir a página do Apache
 Acessar o wsSEU_WEBSERVER pelo ssh
 ssh senac@ssh.SEU_DOMINIO.intra
 ******************************************************************************************
-No wsfagner
+No ws???
 Alterando o endereço do DNS no servidor wsfagner
 sudo vim /etc/netplan/00-installer-config.yaml
 Comentar a linha 39 e descomentar a linha 38
@@ -84,7 +84,7 @@ Comentar a linha 39 e descomentar a linha 38
  38         - 172.16.10.10
  39         #- 172.16.10.254
 ******************************************************************************************
-No wsfagner
+No ws???
 sudo netplan --debug apply
 Verificar se o DNS aponta para o srvSEU_SERVIDOR(172.16.10.10)
 ******************************************************************************************
@@ -92,7 +92,7 @@ No ws???
 sudo systemd-resolve --status
 Verificar se o DNS aponta para o srvSEU_SERVIDOR (172.16.10.10)
 ******************************************************************************************
-No wsfagner
+No ws???
 Testar a conexão local do MySQL
 sudo -i
 mysql -u root -p
