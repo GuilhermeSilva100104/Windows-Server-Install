@@ -1,0 +1,23 @@
+#Autor: Guilherme Morgado Silva
+#Data de criação: 15/06/2022
+#Data de atualização: 15/06/2022
+#Versão: 0.01
+******************************************************************************************
+Iniciar VM
+******************************************************************************************
+Criar Usuário
+Usuário: administrator
+Senha: 123@senac
+******************************************************************************************
+Renomear computador: srvfagner
+******************************************************************************************
+Criação de NIC Team
+Nome: NIC"QUALQUER_NOME"-
+Teaming mode: Switch Independent
+Load Balancing mode: Address Hash
+Standby adapter: None (All adapters Active)
+******************************************************************************************
+IP: 172.16.10.10 255.255.255.0
+Máscara: 255.255.255.0
+Default Gateway: 172.16.10.254
+DNS: 172.16.10.10
